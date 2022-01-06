@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="43137b57-6c2d-494e-896a-fe64c95bf532" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="anypoint-cliFlow" doc:id="d7aa6590-d1e5-4e8a-b1af-9c94e229aa0a" >
+		<http:listener doc:name="Listener" doc:id="6c2017a5-62d2-42e8-919a-9001b6e54f26" config-ref="HTTP_Listener_config" path="/cli"/>
+		<set-payload value="This is anypoint CLI demo project" doc:name="Set Payload" doc:id="c566aad8-11d9-4e26-82ed-5b8a7a048c9f" />
+	</flow>
+</mule>
